@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title xmlns="http://www.w3.org/1999/html">Корзина</title>
+{% endblock %}
+{% block body %}
+<div class="card">
+{% for el in basket1 %}
+    <div class="card">
+        <form method="post">
+    {{el.id}}
+    <div class="card__price"> Цена: {{el.price}}</div>
+     <h5>{{ el.name }}</h5>
+            <a class="btn btn-danger" href="/basket/{{ el.id }}/del">Удалить</a>
+            </form>
+    </div>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title >Продукты</title>
+{% endblock %}
+
+{% block body %}
+<div class="cards">
+
+  {% for el in items %}
+ <!-- Карточка товара -->
+  <div class="card">
+
+  <!-- Верхняя часть -->
+  <div class="card__top">
+
+  </div>
+  <!-- Нижняя часть -->
+  <div class="card__bottom">
+    <!-- Цены на товар )-->
+    <div class="card__prices">
+      <div class="card__price"> Цена: {{el.price}}</div>
+    </div>
+    <h5>{{ el.name }}</h5>
+  </div>
+    <a class="btn btn-warning" href="/product/{{ el.id }}" type="submit">Подробнее</a>
+
+</div>
+  {% endfor %}
+
+</div>
+
+{% endblock %}

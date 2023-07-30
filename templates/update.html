@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Главная страница</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+<h1> Обновление товара</h1>
+<form method="post">
+    <input type="text" class="form-control" value="{{item_id.name}}" name="name">
+    <input type="number" class="form-control" value="{{item_id.price}}" name="price">
+    <button class="btn btn-success" type="submit">Обновить товар</button>
+</form>
+</div>
+{% endblock %}

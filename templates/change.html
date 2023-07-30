@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title >{{item_id.name}}</title>
+{% endblock %}
+
+{% block body %}
+<div class="cards">
+  <form method="post">
+  <div class="card">
+  <!-- Верхняя часть -->
+  <div class="card__top">
+  </div>
+  <!-- Нижняя часть -->
+  <div class="card__bottom">
+    <!-- Цены на товар -->
+    <div class="card__prices">
+      <div class="card__price">Цена: {{item_id.price}}</div>
+    </div>
+    <h5>{{ item_id.name }}</h5>
+   <button class="btn btn-warning" type="submit">Добавить в корзину</button>
+    <a class="btn btn-success" href="/product/{{ item_id.id }}/update">Изменить</a>
+    <a class="btn btn-danger" href="/product/{{ item_id.id }}/del">Удалить</a>
+  </div>
+</div>
+    </form>
+</div>
+
+{% endblock %}
